@@ -8,25 +8,36 @@ export default function HomeScreen({
   navigation,
 }: RootTabScreenProps<'HomeScreen'>) {
   return (
-
-    <View style={styles.container}>
-      <FlatList
-        data={pins}
-        renderItem={({ item }) => <Pin pin={item} />}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-      />
-  
-    </View>
-
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.column}>
+          {pins
+            .filter((_, i) => i % 2 === 0)
+            .map(pin => (
+              <Pin key={pin.id} pin={pin} />
+            ))}
+        </View>
+        <View style={styles.column}>
+          {pins
+            .filter((_, i) => i % 2 === 1)
+            .map(pin => (
+              <Pin key={pin.id} pin={pin} />
+            ))}
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 50,
 
+    paddingTop: 50,
+    flexDirection: 'row',
+
+  },
+  column: {
+    flex: 1,
   },
  
 });
