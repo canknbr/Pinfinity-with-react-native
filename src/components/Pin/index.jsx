@@ -1,8 +1,10 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 const Pin = ({ pin }) => {
+    const navigation = useNavigation();
   const [liked, setLiked] = useState(false);
   const [ratio, setRatio] = useState(1);
   const onLike = () => {
@@ -18,7 +20,10 @@ const Pin = ({ pin }) => {
     }
   }, [pin.image]);
   return (
-    <View style={styles.pin}>
+    <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => navigation.navigate('PinScreen', { id: pin.id})}
+     style={styles.pin}>
       <View>
         <Image
           source={{
@@ -33,7 +38,7 @@ const Pin = ({ pin }) => {
         </View>
       </View>
       <Text style={styles.title}>{pin.title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -62,6 +62,13 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
       />
+      <Stack.Screen
+        name="PinScreen"
+        component={PinScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     
     </Stack.Navigator>
   );
