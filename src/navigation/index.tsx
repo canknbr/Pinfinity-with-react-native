@@ -19,6 +19,7 @@ import useColorScheme from '../hooks/useColorScheme';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import PinScreen from '../screens/PinScreen';
 import {
   RootStackParamList,
@@ -90,8 +91,8 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="PinScreen"
-        component={PinScreen}
+        name="ProfileScreen"
+        component={ProfileScreen}
         options={{
          headerShown: false,
         }}
