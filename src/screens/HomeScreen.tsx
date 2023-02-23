@@ -4,12 +4,12 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../../types';
 
-export default function TabOneScreen({
+export default function HomeScreen({
   navigation,
-}: RootTabScreenProps<'TabOne'>) {
+}: RootTabScreenProps<'HomeScreen'>) {
   return (
     <View style={styles.container}>
-      <Text>Tab One</Text>
+      <Text>Home Screen</Text>
       
 
     </View>
