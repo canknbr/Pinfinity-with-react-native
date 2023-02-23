@@ -7,7 +7,7 @@ import MasonryList from '../components/MasonryList';
 import pins from '../../assets/data/pins';
 export default function ProfileScreen({
   navigation,
-}: RootTabScreenProps<'ProfileScreen'>) {
+}: RootTabScreenProps<'Profile'>) {
   return (
     <ScrollView style={{
       backgroundColor: 'white',

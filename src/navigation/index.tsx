@@ -21,6 +21,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import PinScreen from '../screens/PinScreen';
+import CreatePinScreen from '../screens/CreatePinScreen';
 import {
   RootStackParamList,
   RootTabParamList,
@@ -85,23 +86,39 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="HomeScreen"
+        name="Home"
         component={HomeScreen}
         options={{
           headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="home" size={size} color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="ProfileScreen"
+        name="CreatePin"
+        component={CreatePinScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="plus" size={size} color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
         component={ProfileScreen}
         options={{
-         headerShown: false,
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="user" size={size} color={color} />
+          ),
         }}
       />
     </BottomTab.Navigator>
